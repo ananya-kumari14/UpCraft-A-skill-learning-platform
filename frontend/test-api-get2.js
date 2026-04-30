@@ -1,7 +1,7 @@
 import axios from 'axios';
 (async () => {
     try {
-        const loginRes = await axios.post('http://127.0.0.1:5000/api/v1/admin/login', {
+        const loginRes = await axios.post('https://upcraft-a-skill-learning-platform.onrender.com/api/v1/admin/login', {
             email: 'admin@upcraft.com',
             password: 'admin123'
         });
@@ -9,7 +9,7 @@ import axios from 'axios';
         const config = { headers: { Authorization: `Bearer ${token}` } };
         
         const courseId = '69f34cb090130c78d2ec1de0';
-        const res = await axios.get(`http://127.0.0.1:5000/api/v1/quiz/${courseId}`, config);
+        const res = await axios.get(`https://upcraft-a-skill-learning-platform.onrender.com/api/v1/quiz/${courseId}`, config);
         
         console.log("Quiz fetched:", JSON.stringify(res.data, null, 2));
     } catch (e) {

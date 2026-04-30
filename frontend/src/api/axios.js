@@ -1,8 +1,10 @@
 import axios from "axios";
 
 // Create Axios Instance
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://upcraft-a-skill-learning-platform.onrender.com";
+
 const api = axios.create({
-    baseURL: "/api/v1",  // Use relative path to leverage Vite proxy
+    baseURL: `${API_BASE_URL}/api/v1`,  // Use centralized base URL
     headers: {
         "Content-Type": "application/json",
     },
